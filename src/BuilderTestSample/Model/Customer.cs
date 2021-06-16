@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace BuilderTestSample.Model
 {
@@ -10,11 +8,11 @@ namespace BuilderTestSample.Model
         {
             Id = id;
         }
-        
+
         public int Id { get; private set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Address HomeAddress { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public Address? HomeAddress { get; set; }
         public int CreditRating { get; set; }
         public decimal TotalPurchases { get; set; }
 
