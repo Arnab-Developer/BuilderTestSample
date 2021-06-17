@@ -7,32 +7,33 @@ namespace BuilderTestSample.Tests.TestBuilders
     /// </summary>
     public class OrderBuilder
     {
-        private readonly Order _order = new();
+        private readonly Order _order;
 
-        public OrderBuilder WithTestValues()
+        public OrderBuilder()
         {
-            _order.Id = 0;
-            _order.IsExpedited = false;
-            _order.TotalAmount = 100.8m;
-            _order.Customer = new Customer(1)
+            _order = new Order
             {
-                FirstName = "test first name",
-                LastName = "test last name",
-                HomeAddress = new Address()
+                Id = 0,
+                IsExpedited = false,
+                TotalAmount = 100.8m,
+                Customer = new Customer(1)
                 {
-                    Street1 = "test street1",
-                    Street2 = "test street2",
-                    Street3 = "test street3",
-                    City = "test city",
-                    State = "test state",
-                    PostalCode = "test postal code",
-                    Country = "test country"
-                },
-                CreditRating = 1234,
-                TotalPurchases = 10.5m
+                    FirstName = "test first name",
+                    LastName = "test last name",
+                    HomeAddress = new Address()
+                    {
+                        Street1 = "test street1",
+                        Street2 = "test street2",
+                        Street3 = "test street3",
+                        City = "test city",
+                        State = "test state",
+                        PostalCode = "test postal code",
+                        Country = "test country"
+                    },
+                    CreditRating = 1234,
+                    TotalPurchases = 10.5m
+                }
             };
-
-            return this;
         }
 
         public OrderBuilder WithId(int id)

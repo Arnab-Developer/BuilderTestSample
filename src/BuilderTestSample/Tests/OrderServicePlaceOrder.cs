@@ -19,7 +19,6 @@ namespace BuilderTestSample.Tests
         public void ThrowsExceptionGivenOrderWithExistingId()
         {
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithId(123)
                 .Build();
 
@@ -33,7 +32,6 @@ namespace BuilderTestSample.Tests
         public void OrderAmountMustBeGreaterThanZero()
         {
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithTotalAmount(99)
                 .Build();
 
@@ -47,7 +45,6 @@ namespace BuilderTestSample.Tests
         public void OrderMustHaveACustomer()
         {
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(null)
                 .Build();
 
@@ -61,12 +58,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveAnIdGreaterThanZero1()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithId(0)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -80,12 +75,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveAnIdGreaterThanZero2()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithId(-5)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -99,12 +92,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveAnAddress()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(null)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -118,12 +109,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveFirstName1()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithFirstName(string.Empty)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -137,12 +126,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveFirstName2()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithFirstName(" ")
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -156,12 +143,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveLastName1()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithLastName(string.Empty)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -175,12 +160,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveLastName2()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithLastName(" ")
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -194,12 +177,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveCreditRatingGreaterThan200()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithCreditRating(200)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -213,12 +194,10 @@ namespace BuilderTestSample.Tests
         public void CustomerMustHaveTotalPurchasesGreaterThanZero()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithTotalPurchases(-1)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -232,17 +211,14 @@ namespace BuilderTestSample.Tests
         public void Street1IsRequired1()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithStreet1(null)
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -256,17 +232,14 @@ namespace BuilderTestSample.Tests
         public void Street1IsRequired2()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithStreet1(" ")
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -280,17 +253,14 @@ namespace BuilderTestSample.Tests
         public void CityIsRequired1()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithCity(null)
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -304,17 +274,14 @@ namespace BuilderTestSample.Tests
         public void CityIsRequired2()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithCity(" ")
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -328,17 +295,14 @@ namespace BuilderTestSample.Tests
         public void StateIsRequired1()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithState(null)
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -352,17 +316,14 @@ namespace BuilderTestSample.Tests
         public void StateIsRequired2()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithState(" ")
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -376,17 +337,14 @@ namespace BuilderTestSample.Tests
         public void PostalCodeIsRequired1()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithPostalCode(null)
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -400,17 +358,14 @@ namespace BuilderTestSample.Tests
         public void PostalCodeIsRequired2()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithPostalCode(" ")
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -424,17 +379,14 @@ namespace BuilderTestSample.Tests
         public void CountryIsRequired1()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithCountry(null)
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -448,17 +400,14 @@ namespace BuilderTestSample.Tests
         public void CountryIsRequired2()
         {
             Address address = _addressBuilder
-                .WithTestValues()
                 .WithCountry(" ")
                 .Build();
 
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithHomeAddress(address)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -472,13 +421,11 @@ namespace BuilderTestSample.Tests
         public void SetIsExpeditedToTrue()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .WithTotalPurchases(5001)
                 .WithCreditRating(501)
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithCustomer(customer)
                 .Build();
 
@@ -491,11 +438,9 @@ namespace BuilderTestSample.Tests
         public void CanAddOrderToCustomerHistorySetOrderHistory()
         {
             Customer customer = _customerBuilder
-                .WithTestValues()
                 .Build();
 
             Order order = _orderBuilder
-                .WithTestValues()
                 .WithTotalAmount(144.8m)
                 .WithCustomer(customer)
                 .Build();

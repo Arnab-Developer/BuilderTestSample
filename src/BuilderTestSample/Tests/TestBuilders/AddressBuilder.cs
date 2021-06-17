@@ -4,19 +4,20 @@ namespace BuilderTestSample.Tests.TestBuilders
 {
     public class AddressBuilder
     {
-        private readonly Address _address = new();
+        private readonly Address _address;
 
-        public AddressBuilder WithTestValues()
+        public AddressBuilder()
         {
-            _address.Street1 = "test street1";
-            _address.Street2 = "test street2";
-            _address.Street3 = "test street3";
-            _address.City = "test city";
-            _address.State = "test state";
-            _address.PostalCode = "test postal code";
-            _address.Country = "test country";
-
-            return this;
+            _address = new Address
+            {
+                Street1 = "test street1",
+                Street2 = "test street2",
+                Street3 = "test street3",
+                City = "test city",
+                State = "test state",
+                PostalCode = "test postal code",
+                Country = "test country"
+            };
         }
 
         public AddressBuilder WithStreet1(string street1)

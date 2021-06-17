@@ -6,14 +6,14 @@ namespace BuilderTestSample.Tests.TestBuilders
     public class CustomerBuilder
     {
         public int _id;
-        public string _firstName = string.Empty;
-        public string _lastName = string.Empty;
-        public Address? _homeAddress;
+        public string _firstName;
+        public string _lastName;
+        public Address _homeAddress;
         public int _creditRating;
         public decimal _totalPurchases;
         public List<Order>? _orderHistory;
 
-        public CustomerBuilder WithTestValues()
+        public CustomerBuilder()
         {
             _id = 1;
             _firstName = "test first name";
@@ -30,8 +30,6 @@ namespace BuilderTestSample.Tests.TestBuilders
                 PostalCode = "test postal code",
                 Country = "test country"
             };
-
-            return this;
         }
 
         public CustomerBuilder WithId(int id)
